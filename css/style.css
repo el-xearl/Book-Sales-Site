@@ -1,0 +1,111 @@
+/* 🎨 GENEL SAYFA STİLİ */
+body {
+    font-family: 'Poppins', sans-serif; /* Yazı tipi olarak modern ve okunaklı Poppins ailesini kullanır */
+    background-color: #f8f9fa; /* Sayfanın arka plan rengini açık gri tonuna ayarlar */
+}
+
+/* 🔹 NAVBAR (Üst Menü) Tasarımı */
+.navbar {
+    /* Mavi-mor tonlu geçişli (gradient) arka plan */
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.navbar-brand {
+    font-weight: 700;           /* Yazı kalınlığı: koyu (bold) */
+    color: white !important;    /* Yazı rengini beyaz yapar, diğer stilleri geçersiz kılar */
+    font-size: 1.5rem;          /* Yazı boyutunu büyütür */
+}
+
+.nav-link {
+    color: white !important;    /* Menü bağlantılarının rengi beyaz */
+    font-weight: 500;           /* Orta kalınlıkta yazı */
+    margin-left: 10px;          /* Linkler arasında boşluk bırakır */
+}
+
+.nav-link:hover {
+    text-decoration: underline; /* Fareyle üzerine gelindiğinde altı çizili olur */
+}
+
+/* 🖼️ HERO BÖLÜMÜ (Ana görsel kısmı) */
+.hero {
+    /* Arka plan görseli: Unsplash’tan alınan kitap temalı bir fotoğraf */
+    background: url('https://images.unsplash.com/photo-1512820790803-83ca734da794') center/cover no-repeat;
+    color: white;               /* Yazılar beyaz renkte */
+    text-align: center;         /* Metin ortalanır */
+    padding: 130px 20px;        /* Üst-alt ve yan boşluklar */
+    position: relative;         /* Altına gölge katmanı (overlay) yerleştirmek için konumlandırma yapılır */
+}
+
+/* Hero bölümüne yarı saydam siyah katman ekleyerek görselin okunabilirliğini artırır */
+.hero::before {
+    content: "";                /* Görsel üzerine boş bir katman oluşturur */
+    position: absolute;         /* Hero alanının tamamını kaplar */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55); /* Yarı saydam siyah katman */
+}
+
+/* Hero içindeki başlık, paragraf ve butonun üstte görünmesini sağlar (arka planın önüne alır) */
+.hero h1,
+.hero p,
+.hero a {
+    position: relative;
+    z-index: 2; /* Siyah katmanın üzerinde görünür */
+}
+
+/* Hero başlık tasarımı */
+.hero h1 {
+    font-size: 3rem;            /* Büyük başlık boyutu */
+    font-weight: 700;           /* Kalın yazı tipi */
+}
+
+/* Hero alt metin (açıklama) tasarımı */
+.hero p {
+    font-size: 1.2rem;          /* Orta boy metin */
+    margin: 15px 0 30px;        /* Üst ve alt boşluklar */
+}
+
+/* 📚 KİTAP KARTLARI */
+.book-card {
+    transition: 0.3s;           /* Hover (üzerine gelme) animasyonu için geçiş süresi */
+}
+
+/* Kartın üzerine gelindiğinde yukarı doğru hafifçe kalkar ve gölge belirir */
+.book-card:hover {
+    transform: translateY(-8px); /* 8px yukarı kaydırma efekti */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Hafif gölge efekti */
+}
+
+/* Kart başlık yazısı */
+.card-title {
+    color: #343a40;             /* Koyu gri renk */
+    font-weight: 600;           /* Yarı kalın yazı tipi */
+}
+
+/* Kartın üstündeki kitap görseli */
+.card-img-top {
+    width: 100%;                /* Görsel kartın tamamını kaplar */
+    height: 280px;              /* Görsel yüksekliği sabitlenir */
+    object-fit: cover;          /* Görsel orantılı biçimde kırpılır, taşma olmaz */
+    display: block;             /* Varsayılan boşlukları kaldırır */
+    border-radius: 10px 10px 0 0; /* Kartın üst köşeleri yuvarlatılır */
+    margin: 0;
+    padding: 0;
+}
+
+/* Fiyat yazısı */
+.price {
+    color: #6a11cb;             /* Mor tonlu vurgu rengi */
+    font-weight: bold;          /* Kalın yazı */
+}
+
+/* ⚫ ALT BÖLÜM (FOOTER) */
+footer {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); /* Navbar ile uyumlu geçişli arka plan */
+    color: white;               /* Yazılar beyaz */
+    text-align: center;         /* Metin ortalanır */
+    padding: 20px 0;            /* İç boşluk */
+    margin-top: 40px;           /* Üstteki içerikten boşluk bırakır */
+}
